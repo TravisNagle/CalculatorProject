@@ -102,17 +102,10 @@ namespace CalculatorProject
             dispatchTable["currentValue"] = x % y;
         }
 
-        public void Exp(string input)
+        public void Square(string input)
         {
             double x = Parse(input);
-            dispatchTable["currentValue"] = Math.Pow(this.GetCurrentValue(), x);
-        }
-
-        public void Exp(string inputOne, string inputTwo)
-        {
-            double x = Parse(inputOne);
-            double y = Parse(inputTwo);
-            dispatchTable["currentValue"] = Math.Pow(x, y);
+            dispatchTable["currentValue"] = Math.Pow(x, 2);
         }
 
         public void Root(string input)
@@ -126,6 +119,40 @@ namespace CalculatorProject
             double x = Parse(inputOne);
             double y = Parse(inputTwo);
             dispatchTable["currentValue"] = Math.Pow(x, 1 / y);
+        }
+        public void Exp(string input)
+        {
+            double x = Parse(input);
+            dispatchTable["currentValue"] = Math.Pow(this.GetCurrentValue(), x);
+        }
+
+        public void Exp(string inputOne, string inputTwo)
+        {
+            double x = Parse(inputOne);
+            double y = Parse(inputTwo);
+            dispatchTable["currentValue"] = Math.Pow(x, y);
+        }
+
+        public void Factorial(string input)
+        {
+            double x = Parse(input);
+            double total = 1;
+            if (x == 0)
+            {
+                x = total;
+            }
+            else if(x < 0)
+            {
+                throw new KeyNotFoundException();
+            }
+            else
+            {
+                for (int i = 1; i <= x; i++)
+                {
+                    total *= i;
+                }
+            }
+            dispatchTable["currentValue"] = total;
         }
     }
 }
