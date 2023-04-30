@@ -30,6 +30,17 @@ namespace CalculatorProject
             return x;
         }
 
+        public void Add(string input)
+        {
+            double x = Parse(input);
+            dispatchTable["currentValue"] = this.GetCurrentValue() + x;
+        }
 
+        public void Add(string inputOne, string inputTwo)
+        {
+            double x = Parse(inputOne);
+            double y = Parse(inputTwo);
+            dispatchTable["currentValue"] = x + y;
+        }
     }
 }
