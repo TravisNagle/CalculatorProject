@@ -30,8 +30,10 @@ namespace CalculatorProject
             underlyingCommands["-"] = new Action<string, string>((a, b) => calc.Subtract(a, b));
             underlyingCommands["*"] = new Action<string, string>((a, b) => calc.Multiply(a, b));
             underlyingCommands["/"] = new Action<string, string>((a, b) => calc.Divide(a, b));
+            underlyingCommands["%"] = new Action<string, string>((a, b) => calc.Mod(a, b));
+            underlyingCommands["exp"] = new Action<string, string>((a, b) => calc.Exp(a, b));
+            underlyingCommands["root"] = new Action<string, string>((a, b) => calc.Root(a, b));
 
-            //TODO: Fix error where divide and subtract don't work properly when working with the current value
             while (!Quit)
             {
                 Console.WriteLine("Current Value: " + calc.GetCurrentValue());
