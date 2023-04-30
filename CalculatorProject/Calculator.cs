@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,13 +9,12 @@ namespace CalculatorProject
 {
     internal class Calculator
     {
-        public Dictionary<string, dynamic> dispatchTable = new();
-        public void Run()
+        public Dictionary<string, double> dispatchTable = new();
+        
+        public double GetCurrentValue()
         {
-            dispatchTable["add"] = new Func<int, int, int>((x, y) => (x + y));
-            dispatchTable["sub"] = new Func<int, int, int>((x, y) => (x - y));
-            dispatchTable["mul"] = new Func<int, int, int>((x, y) => (x * y));
-            dispatchTable["div"] = new Func<int, int, int>((x, y) => (x / y));
+            return dispatchTable.ContainsKey("currentValue") ? dispatchTable["currentValue"] : 0;
         }
+
     }
 }
