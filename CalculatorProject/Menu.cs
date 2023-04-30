@@ -25,22 +25,31 @@ namespace CalculatorProject
             }
 
 
-            underlyingCommands["store"] = new Action<string, string>((a, b) => calc.Store(a, b));
-            underlyingCommands["add"] = new Action<string, string>((a, b) => calc.Add(a, b));
-            underlyingCommands["subtract"] = new Action<string, string>((a, b) => calc.Subtract(a, b));
+            underlyingCommands["="] = new Action<string, string>((a, b) => calc.Store(a, b));
+            underlyingCommands["+"] = new Action<string, string>((a, b) => calc.Add(a, b));
+            underlyingCommands["-"] = new Action<string, string>((a, b) => calc.Subtract(a, b));
+            underlyingCommands["*"] = new Action<string, string>((a, b) => calc.Multiply(a, b));
+            underlyingCommands["/"] = new Action<string, string>((a, b) => calc.Divide(a, b));
 
-            while(!Quit)
+            while (!Quit)
             {
                 Console.WriteLine("Current Value: " + calc.GetCurrentValue());
                 string[] input = Console.ReadLine().Split(" ");
 
-                if(input.Length == 3)
+                try
                 {
-                    underlyingCommands[input[1]](input[0], input[2]);
+                    if (input.Length == 3)
+                    {
+                        underlyingCommands[input[1]](input[0], input[2]);
+                    }
+                    else if (input.Length == 2)
+                    {
+                        underlyingCommands[input[0]](input[1], calc.GetCurrentValue().ToString());
+                    }
                 }
-                else if(input.Length == 2)
+                catch(KeyNotFoundException e)
                 {
-                    underlyingCommands[input[0]](input[1], calc.GetCurrentValue().ToString());
+                    Console.WriteLine("I'm sorry, I didn't understand that. Please try again.");
                 }
             }
         }
