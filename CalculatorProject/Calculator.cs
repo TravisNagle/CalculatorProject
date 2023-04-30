@@ -16,5 +16,20 @@ namespace CalculatorProject
             return dispatchTable.ContainsKey("currentValue") ? dispatchTable["currentValue"] : 0;
         }
 
+        public double Parse(string value)
+        {
+            double x;
+            if(dispatchTable.ContainsKey(value))
+            {
+                x = dispatchTable[value];
+            }
+            else
+            {
+                double.TryParse(value, out x);
+            }
+            return x;
+        }
+
+
     }
 }
