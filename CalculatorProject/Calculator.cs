@@ -49,5 +49,18 @@ namespace CalculatorProject
             double y = Parse(inputTwo);
             dispatchTable["currentValue"] = x + y;
         }
+
+        public void Subtract(string input)
+        {
+            double x = Parse(input);
+            dispatchTable["currentValue"] = this.GetCurrentValue() - x;
+        }
+
+        public void Subtract(string inputOne, string inputTwo)
+        {
+            double x = Parse(inputOne);
+            double y = Parse(inputTwo);
+            dispatchTable["currentValue"] = x - y;
+        }
     }
 }
