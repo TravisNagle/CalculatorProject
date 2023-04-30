@@ -31,6 +31,7 @@ namespace CalculatorProject
             underlyingCommands["*"] = new Action<string, string>((a, b) => calc.Multiply(a, b));
             underlyingCommands["/"] = new Action<string, string>((a, b) => calc.Divide(a, b));
 
+            //TODO: Fix error where divide and subtract don't work properly when working with the current value
             while (!Quit)
             {
                 Console.WriteLine("Current Value: " + calc.GetCurrentValue());
