@@ -45,7 +45,7 @@ namespace CalculatorProject
                     }
                     else if (input.Length == 2)
                     {
-                        underlyingCommands[input[0]](input[1], calc.GetCurrentValue().ToString());
+                        underlyingCommands[input[0]](calc.GetCurrentValue().ToString(), input[1]);
                     }
                 }
                 catch(KeyNotFoundException e)
