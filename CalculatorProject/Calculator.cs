@@ -1,4 +1,12 @@
-﻿using System;
+﻿///////////////////////////////////////////////////////////////////////////////
+//
+// Author: Travis Nagle, Naglet@etsu.edu
+// Course: CSCI-2210-001 - Data Structures
+// Assignment: Project 7 - CalculatorProject
+// Description: Calculator class that handles all operations within the calculator
+//
+///////////////////////////////////////////////////////////////////////////////
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
