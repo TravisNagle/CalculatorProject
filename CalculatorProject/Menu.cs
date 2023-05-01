@@ -80,7 +80,7 @@ namespace CalculatorProject
 
             foreach (KeyValuePair<string, string> kvp in menu)
             {
-                if(kvp.Key == "root" || kvp.Key == "add" || kvp.Key == "store")
+                if(kvp.Key == "root" || kvp.Key == "add" || kvp.Key == "store" || kvp.Key == "clear")
                 {
                     Console.WriteLine("[{0}]\t\t [{1}]", kvp.Key, kvp.Value);
                 }
