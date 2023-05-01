@@ -7,15 +7,26 @@ using System.Threading.Tasks;
 
 namespace CalculatorProject
 {
+    /// <summary>
+    /// Implementation of file manager that handles saving variables and loading variables
+    /// </summary>
     internal class FileManager
     {
         private Dictionary<string, double> variables = new();
 
+        /// <summary>
+        /// Adds a variable pair to the variables dictionary
+        /// </summary>
+        /// <param name="name">name of variable</param>
+        /// <param name="value">value variable represents</param>
         public void AddVariable(string name, double value)
         {
             variables[name] = value;
         }
 
+        /// <summary>
+        /// SaveFile method that saves each variable combination the user chooses to save
+        /// </summary>
         public void SaveFile()
         {
             string fileName = "saveFile.csv";
@@ -44,6 +55,9 @@ namespace CalculatorProject
             }
         }
 
+        /// <summary>
+        /// LoadFile method that loads a file full of variables
+        /// </summary>
         public void LoadFile()
         {
             StreamReader reader = null;
